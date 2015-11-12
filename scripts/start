@@ -1,0 +1,12 @@
+#!/bin/sh
+
+path=$(echo $PATH | grep '/home/yinanfang/webapps/likeit/bin')
+if [ -z "$path" ]; then
+  export PATH=$PATH:/home/yinanfang/webapps/likeit/bin
+fi
+
+procs=$(pm2 list | grep 'likeit.*online')
+if [ -z "$procs" ]; then
+    # forever start -a -o /home/user/webapps/nodeapp/out.log -e /home/user/webapps/nodeapp/error.log --uid "mylovelynodeapp" /home/user/webapps/nodeapp/app/bin/www
+    pm2 start /home/yinanfang/webapps/likeit/app/app.js -n likeit
+fi
