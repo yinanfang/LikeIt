@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-    app: ['app/**/*'],
-    api: ['api/**/*'],
-    test: ['test/**/*'],
+  app: ['app/**/*'],
+  api: ['api/**/*'],
+  test: ['test/**/*'],
 };

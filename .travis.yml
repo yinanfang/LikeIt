@@ -4,7 +4,7 @@ node_js:
 before_script:
   - npm install -g bower
   - bower install
-  - npm install
+  - npm install --dev
 script:
   - node_modules/karma/bin/karma start karma.conf.js --single-run
 after_success:
