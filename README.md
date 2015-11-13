@@ -1,5 +1,7 @@
 # LikeIt
 
+[![Build Status](https://travis-ci.org/yinanfang/LikeIt.png?branch=master)](https://travis-ci.org/yinanfang/LikeIt)
+
 ## Wefaction & Github & Local setup guide. [Reference](https://www.jamestease.co.uk/blether/deploying-express-nodejs-app-to-webfaction-using-git-hooks) (Partially outdated)
 
 Install Node.js 4.0.0 or the latest version using Control Panel
