@@ -1,7 +1,7 @@
 // Karma configuration
 // Generated on Tue Aug 25 2015 09:04:54 GMT-0400 (EDT)
 
-var path = require('path.js');
+var path = require('./path.js');
 
 module.exports = function(config) {
   config.set({
@@ -14,9 +14,7 @@ module.exports = function(config) {
     frameworks: ['jasmine'],
 
     // list of files / patterns to load in the browser
-    files: [
-      path.test,
-    ],
+    files: path.testFiles,
 
     // list of files to exclude
     exclude: [
