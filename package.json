@@ -48,6 +48,7 @@
     "karma-spec-reporter": "0.0.22",
     "merge-stream": "^1.0.0",
     "phantomjs": "^1.9.18",
+    "request": "^2.65.0",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.0.2"
   },

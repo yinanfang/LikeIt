@@ -39,6 +39,32 @@ Local setup with basic init or Github clone
     git remote add web yinanfang@yinanfang.webfactional.com:/home/yinanfang/webapps/git/repos/LikeIt.git
     git push web master
 
+Link pm2 to Keymetrics
+
+    pm2 link [public_key] [private_key] [machine_name]
+
+
+
+
+To-do
+update gulpfile
+Test api in the karma single-run
+  test frameworks
+    Use 'request' like https://github.com/mhevery/jasmine-node but no need to install jasmine-node
+    frisbyjs - http://frisbyjs.com/
+      reference - http://adndevblog.typepad.com/cloud_and_mobile/2015/05/test-rest-api-in-an-automatic-way.html
+  make sure it work on the Travis. localhost port problem on Travis
+  move port into config file
+
+
+
+
+
+
+Note:
+Update npm package.json with
+  ncu -u
+
 
 
 possible problem:
