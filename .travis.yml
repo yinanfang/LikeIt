@@ -6,6 +6,7 @@ before_script:
   - bower install
   - npm install --dev
 script:
+  - node app.js
   - node_modules/karma/bin/karma start karma.conf.js --single-run
 after_success:
-  - echo 'Success!'
+  - echo 'Travis CI Integration Test Success!'
