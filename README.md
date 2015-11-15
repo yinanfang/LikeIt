@@ -47,17 +47,34 @@ Link pm2 to Keymetrics
 
 
 To-do
+
+separate
+  - karma, jamine for module and frontend testing
+  - frisby, jasmine-noe for api testing
+    test if request("domain/") works with jasmine-node locally separate from Karma
+  - travis.yml
+    test module first
+    then test api
+  - add api test into gulpfile
+    check and see if gulp-jasmine work. if not, use command line jasmine-node
+push it to Travis
+
 update gulpfile
+
+build simple api for test
+
 Test api in the karma single-run
   test frameworks
     Use 'request' like https://github.com/mhevery/jasmine-node but no need to install jasmine-node
     frisbyjs - http://frisbyjs.com/
       reference - http://adndevblog.typepad.com/cloud_and_mobile/2015/05/test-rest-api-in-an-automatic-way.html
   make sure it work on the Travis. localhost port problem on Travis
-  move port into config file
+  move port number, path.js into config file
 
+setup login.js and database
 
-
+pm2 start with json add log files for output and errors.
+Add comment to start, stop. jsonwebtoken, handlebar
 
 
 
