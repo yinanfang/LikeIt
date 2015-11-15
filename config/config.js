@@ -30,7 +30,7 @@ module.exports = {
   },
 
   constant: {
-    BrowserSyncReloadDelay: 500,
+    BrowserSyncReloadDelay: 1000,
   },
 
 /*

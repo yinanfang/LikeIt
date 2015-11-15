@@ -10,9 +10,10 @@ var browserSync = require('browser-sync');
 var del = require('del');
 var karmaServer = require('karma').Server;
 var nodemon = require('gulp-nodemon');
-// var opn = require('opn');
 var appConfig = require('./config/config.js');
 var runSequence = require('run-sequence');
+// var jasmine = require('gulp-jasmine');
+var shell = require('gulp-shell');
 
 // Clean Output Directory
 gulp.task('clean', function (cb) {
@@ -43,8 +44,12 @@ gulp.task('nodemon', function (cb) {
       if (!called) { cb(); }
       called = true;
 
-      // Run tests
-      karmaSingleRun();
+      setTimeout(function startTest() {
+        // Run tests
+        gulp.start('test');
+      }, BROWSER_SYNC_RELOAD_DELAY);
+
+
     })
     .on('restart', function onRestart() {
       // reload connected browsers after a slight delay
@@ -55,7 +60,7 @@ gulp.task('nodemon', function (cb) {
       }, BROWSER_SYNC_RELOAD_DELAY);
 
       // Run tests
-      karmaSingleRun();
+      gulp.start('test');
     });
 });
 
@@ -93,9 +98,13 @@ gulp.task('browser-sync', ['nodemon'], function () {
   // opn('http://localhost:4000',{app: ['google chrome']});
 });
 
-var karmaSingleRun = function() {
-  gulp.start('karmaSingleRun');
-};
+// gulp.task('test', ['karmaSingleRun', 'APITestWithJasmine']);
+gulp.task('test', function() {
+  runSequence(
+    ['karmaSingleRun'],
+    ['APITestWithJasmine']
+  );
+});
 
 // No need to Karma plugin: https://github.com/karma-runner/gulp-karma
 gulp.task('karmaSingleRun', function (done) {
@@ -105,13 +114,23 @@ gulp.task('karmaSingleRun', function (done) {
   }, done).start();
 });
 
-gulp.task('test', ['karmaSingleRun']);
+// gulp.task('APITestWithJasmine', function () {
+  // frisby and gulp-jasmine doesn't work well together: https://github.com/vlucas/frisby/issues/173
+  // return gulp.src('test/api/*spec.js')
+  //   .pipe(jasmine());
+// });
+// Workaround: use shell command to run jasmine-node
+gulp.task('APITestWithJasmine', shell.task([
+  'which jasmine-node',
+  'jasmine-node ./test/api',
+]));
 
 gulp.task('default', ['clean'], function (cb) {
   console.log('before run sequence');
   runSequence(
     ['browser-sync'],
-    cb);
+    cb
+  );
 });
 
 // gulp.task('dist', ['clean'], function (cb) {
