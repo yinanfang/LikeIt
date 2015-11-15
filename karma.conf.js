@@ -1,7 +1,7 @@
 // Karma configuration
 // Generated on Tue Aug 25 2015 09:04:54 GMT-0400 (EDT)
 
-var path = require('./path.js');
+var appConfig = require('./config/config.js');
 
 module.exports = function(config) {
   config.set({
@@ -14,7 +14,7 @@ module.exports = function(config) {
     frameworks: ['jasmine'],
 
     // list of files / patterns to load in the browser, including source and test files
-    files: path.testFiles,
+    files: appConfig.path.testFiles,
 
     // list of files to exclude
     exclude: [
@@ -31,7 +31,7 @@ module.exports = function(config) {
     reporters: ['spec'],
 
     // web server port
-    port: 9876,
+    port: appConfig.port.karma.webServer,
 
     // enable / disable colors in the output (reporters and logs)
     colors: true,
