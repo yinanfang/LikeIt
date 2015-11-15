@@ -11,7 +11,10 @@ module.exports = {
   path: {
     app: [''],
     api: ['api/**/*'],
-    testFiles: ['test/*.js'],
+    test: {
+      module: ['test/module/*.js'],
+      api: ['test/api/*.js'],
+    },
   },
 
   port: {
