@@ -2,6 +2,8 @@
 
 echo 'Start Travis CI Integration Test'
 node app.js &
-sleep 5
+sleep 3
+PID=$!
 node_modules/karma/bin/karma start karma.conf.js --single-run
 jasmine-node ./test/api
+kill -9 $PID
