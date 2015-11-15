@@ -6,10 +6,6 @@ before_script:
   - bower install
   - npm install --dev
 script:
-  - echo 'Start Travis CI Integration Test'
-  - node app.js &
-  - sleep 5
-  - node_modules/karma/bin/karma start karma.conf.js --single-run
-  # - jasmine-node ./test/api
+  - ./scripts/test
 after_success:
   - echo 'Travis CI Integration Test Success!'
