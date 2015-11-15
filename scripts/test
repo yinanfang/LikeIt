@@ -1,6 +1,5 @@
 #!/bin/sh
 
-# Test script inspired by http://blog.apiary.io/2013/10/17/How-to-test-api-with-api-blueprint-and-dredd/
 echo 'Start Travis CI Integration Test'
 node app.js &
 sleep 3

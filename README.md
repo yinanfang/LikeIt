@@ -74,9 +74,21 @@ Use pmx
   - monitor trafic: https://app.keymetrics.io/#/bucket/5644e8cdc0d152ac7f59a3aa/transactions
   - add custom actions: http://docs.keymetrics.io/docs/pages/custom-actions/
 
-Note:
-Update npm package.json with
-  ncu -u
+Add gulp-eslint
+
+Badge to use
+  - https://github.com/duemunk/Async
+    - Collection of badges: http://shields.io/
+  - https://github.com/wycats/handlebars.js/
+    - browser test: https://saucelabs.com/u/handlebars
+  - https://github.com/sequelize/sequelize
+    - David - watch dependencies: https://david-dm.org/sequelize/sequelize
+    - Code Climate: https://codeclimate.com/github/sequelize/sequelize
+  - Chat
+    - https://gitter.im/
+  - https://github.com/substack/tape
+    - browser: https://ci.testling.com/substack/tape
+
 
 
 ## Notes / possible problems
@@ -91,6 +103,10 @@ kill 16489
 ### Duplicate app record in pm2
 pm2 starts 2 likeit process and post-receive won't work
 ssh in and do "pm2 delete likeit"
+
+### Dependency check
+Update npm package.json with
+  ncu -u
 
 ### Node search path
   - Relative Path Problem: Obtain file from topmost directory with "require.main.require". [Solution and Comparison](https://gist.github.com/branneman/8048520)

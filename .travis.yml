@@ -1,3 +1,5 @@
+# Test script inspired by http://blog.apiary.io/2013/10/17/How-to-test-api-with-api-blueprint-and-dredd/
+
 language: node_js
 node_js:
   - "4.0"
