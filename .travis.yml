@@ -10,6 +10,6 @@ script:
   - node app.js &
   - sleep 5
   - node_modules/karma/bin/karma start karma.conf.js --single-run
-  - jasmine-node ./test/api
+  # - jasmine-node ./test/api
 after_success:
   - echo 'Travis CI Integration Test Success!'
