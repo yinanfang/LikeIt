@@ -14,7 +14,10 @@ module.exports = function(config) {
     frameworks: ['jasmine'],
 
     // list of files / patterns to load in the browser, including source and test files
-    files: appConfig.path.test.module,
+    files: [
+      appConfig.path.api,
+      appConfig.path.test.module,
+    ],
 
     // list of files to exclude
     exclude: [

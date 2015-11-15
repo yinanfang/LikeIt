@@ -1,3 +1,5 @@
+'use strict';
+
 describe('A suite', function() {
   it('contains spec with an expectation', function() {
     expect(true).toBe(true);
@@ -6,4 +8,9 @@ describe('A suite', function() {
   it('should pass this test', function() {
     expect(1).toBe(1);
   });
+
+  it('testing testVar', function() {
+    expect(testVar).toBeDefined();
+  });
+
 });

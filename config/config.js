@@ -9,11 +9,11 @@ module.exports = {
   JWTSecret: process.env.JWT_SECRET || '1NZtMZo8Y45RnzJS6CfViEwI1dwpwc',
 
   path: {
-    app: [''],
-    api: ['api/**/*'],
+    app: '/',
+    api: 'api/**/*.js',
     test: {
-      module: ['test/module/*.js'],
-      api: ['test/api/*.js'],
+      module: 'test/module/*.js',
+      api: 'test/api/*.js',
     },
   },
 
