@@ -7,8 +7,8 @@ var port = process.env.PORT || appConfig.port.app.main;
 
 logger.info('configuring express....');
 
-logger.debug('Overriding Express logger');
-app.use(require('morgan')({ 'stream': logger.stream }));
+// Overriding Express logger with Morgan
+app.use(require('morgan')('combined', { 'stream': logger.stream }));
 
 app.get('/', function(req, res) {
   res.writeHead(200, {'Content-Type': 'text/plain'});

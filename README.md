@@ -11,6 +11,8 @@
   - Automatic deployment with git hooks
     - post-receive script deploy app on push and restart server
   - Monitor app status with PM2
+  - Logging with winston console logger and file logger (in JSON)
+    - Ease for reading on console and extraction on files
 
 ## Wefaction & Github & Local setup guide. [Reference](https://www.jamestease.co.uk/blether/deploying-express-nodejs-app-to-webfaction-using-git-hooks) (Partially outdated)
 
