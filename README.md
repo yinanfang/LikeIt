@@ -22,6 +22,8 @@
   - Authentication with JWT because
     - [Cookies are bad for you](http://sitr.us/2011/08/26/cookies-are-bad-for-you.html)
     - [Difference between JWT and Cookie](https://stormpath.com/blog/where-to-store-your-jwts-cookies-vs-html5-web-storage/)
+  - Test
+    - Cover Coverage with Istanbul: [Tutorial](http://ariya.ofilabs.com/2013/10/code-coverage-of-jasmine-tests-using-istanbul-and-karma.html)
 
 ## Best Practices
 
@@ -89,33 +91,26 @@ Add gulp-eslint
 
 Badge to use
 
-  - https://github.com/wycats/handlebars.js/
-    - browser test: https://saucelabs.com/u/handlebars
-  - https://github.com/sequelize/sequelize
-    - Code Climate: https://codeclimate.com/github/sequelize/sequelize
-  - https://github.com/substack/tape
-    - browser: https://ci.testling.com/substack/tape
-  - https://github.com/chaijs/chai
-    - browser: sourcelab
-    - license?
-
-winston
-  - connect to loggly
+  - Sauce Labs
+    - https://github.com/wycats/handlebars.js/
+    - https://github.com/chaijs/chai
+  - Code Climate
+    - https://github.com/sequelize/sequelize
+    - istanbul
+      - can't find repo token
+      - Travis support: http://docs.travis-ci.com/user/code-climate/#JavaScript
+  - Loggly
     - https://www.loggly.com/blog/three-node-js-libraries-which-make-sophisticated-logging-simplers/
     - https://github.com/winstonjs/winston-loggly
+  - node-inspector
+    - https://github.com/node-inspector/node-inspector
+  - plato
+    - Add it to gulp: https://github.com/sindresorhus/gulp-plato
+    - Tutorial: http://ariya.ofilabs.com/2013/01/javascript-code-complexity-visualization.html
 
-Learn node-inspector
-  - https://github.com/node-inspector/node-inspector
 
 Find useful tools
   - https://www.airpair.com/node.js/posts/top-10-mistakes-node-developers-make
-    - cover coverage with istanbul: http://ariya.ofilabs.com/2013/10/code-coverage-of-jasmine-tests-using-istanbul-and-karma.html
-    - add codeclimate reporter to Travis: http://docs.travis-ci.com/user/code-climate/#JavaScript
-    - plato
-      - Add it to gulp: https://github.com/sindresorhus/gulp-plato
-      - Tutorial: http://ariya.ofilabs.com/2013/01/javascript-code-complexity-visualization.html
-    - slack
-    - gitter
 
 
 ## Notes / possible problems
