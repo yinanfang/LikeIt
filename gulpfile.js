@@ -37,7 +37,11 @@ gulp.task('nodemon', function (cb) {
     script: 'app.js',
 
     // watch core server file(s) that require server restart on change
-    watch: ['**/*'],
+    watch: [
+      'api/**/*',
+      'app/**/*',
+      'app.js',
+    ],
   })
     .on('start', function onStart() {
       // ensure start only got called once
@@ -70,7 +74,7 @@ gulp.task('browser-sync', ['nodemon'], function () {
   browserSync.init({
 
     // watch the following files; changes will be injected (css & images) or cause browser to refresh
-    files: ['public/**/*.*'],
+    files: ['app/**/*.*'],
 
     // informs browser-sync to proxy our expressjs app which would run at the following location
     // The port specified in the app.js

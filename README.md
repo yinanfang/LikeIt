@@ -1,7 +1,12 @@
 # LikeIt
 
+[![license:mit](https://img.shields.io/badge/license-mit-green.svg?style=flat-square)](#license)<br>
 [![Build Status](https://travis-ci.org/yinanfang/LikeIt.png?branch=master)](https://travis-ci.org/yinanfang/LikeIt)
+[![Code Climate](https://codeclimate.com/github/yinanfang/LikeIt/badges/gpa.svg)](https://codeclimate.com/github/yinanfang/LikeIt)
+[![Test Coverage](https://codeclimate.com/github/yinanfang/LikeIt/badges/coverage.svg)](https://codeclimate.com/github/yinanfang/LikeIt/coverage)<br>
 [![Dependency Status](https://david-dm.org/yinanfang/LikeIt.svg)](https://david-dm.org/yinanfang/LikeIt)
+[![Gitter Join Chat](https://img.shields.io/badge/gitter-join%20chat-1dce73.svg)](https://gitter.im/yinanfang/LikeIt)
+
 
 ## Features
 
@@ -83,20 +88,15 @@ Use pmx
 Add gulp-eslint
 
 Badge to use
-  - https://github.com/duemunk/Async
-    - Collection of badges: http://shields.io/
+
   - https://github.com/wycats/handlebars.js/
     - browser test: https://saucelabs.com/u/handlebars
   - https://github.com/sequelize/sequelize
-    - David - watch dependencies: https://david-dm.org/sequelize/sequelize
     - Code Climate: https://codeclimate.com/github/sequelize/sequelize
-  - Chat
-    - https://gitter.im/
   - https://github.com/substack/tape
     - browser: https://ci.testling.com/substack/tape
   - https://github.com/chaijs/chai
     - browser: sourcelab
-    - Coverage: overall
     - license?
 
 winston
@@ -110,10 +110,12 @@ Learn node-inspector
 Find useful tools
   - https://www.airpair.com/node.js/posts/top-10-mistakes-node-developers-make
     - cover coverage with istanbul: http://ariya.ofilabs.com/2013/10/code-coverage-of-jasmine-tests-using-istanbul-and-karma.html
+    - add codeclimate reporter to Travis: http://docs.travis-ci.com/user/code-climate/#JavaScript
     - plato
       - Add it to gulp: https://github.com/sindresorhus/gulp-plato
       - Tutorial: http://ariya.ofilabs.com/2013/01/javascript-code-complexity-visualization.html
-
+    - slack
+    - gitter
 
 
 ## Notes / possible problems
