@@ -1,11 +1,11 @@
 # LikeIt
 
-[![license:mit](https://img.shields.io/badge/license-mit-green.svg?style=flat-square)](#license)<br>
-[![Build Status](https://travis-ci.org/yinanfang/LikeIt.png?branch=master&style=flat-square)](https://travis-ci.org/yinanfang/LikeIt)
-[![Code Climate](https://codeclimate.com/github/yinanfang/LikeIt/badges/gpa.svg?style=flat-square)](https://codeclimate.com/github/yinanfang/LikeIt)
-[![Test Coverage](https://codeclimate.com/github/yinanfang/LikeIt/badges/coverage.svg?style=flat-square)](https://codeclimate.com/github/yinanfang/LikeIt/coverage)<br>
-[![Dependency Status](https://david-dm.org/yinanfang/LikeIt.svg?style=flat-square)](https://david-dm.org/yinanfang/LikeIt)
-[![Gitter Join Chat](https://img.shields.io/badge/gitter-join%20chat-1dce73.svg?style=flat-square)](https://gitter.im/yinanfang/LikeIt)
+[![license:mit](https://img.shields.io/badge/license-mit-green.svg)](#license)<br>
+[![Build Status](https://travis-ci.org/yinanfang/LikeIt.png?branch=master)](https://travis-ci.org/yinanfang/LikeIt)
+[![Code Climate](https://codeclimate.com/github/yinanfang/LikeIt/badges/gpa.svg)](https://codeclimate.com/github/yinanfang/LikeIt)
+[![Test Coverage](https://codeclimate.com/github/yinanfang/LikeIt/badges/coverage.svg)](https://codeclimate.com/github/yinanfang/LikeIt/coverage)<br>
+[![Dependency Status](https://david-dm.org/yinanfang/LikeIt.svg)](https://david-dm.org/yinanfang/LikeIt)
+[![Gitter Join Chat](https://img.shields.io/badge/gitter-join%20chat-1dce73.svg)](https://gitter.im/yinanfang/LikeIt)
 
 
 ## Features
