@@ -1,11 +1,11 @@
 # LikeIt
 
 [![license:mit](https://img.shields.io/badge/license-mit-green.svg)](#license)<br>
-[![Build Status](https://travis-ci.org/yinanfang/LikeIt.png?branch=master)](https://travis-ci.org/yinanfang/LikeIt)
-[![Code Climate](https://codeclimate.com/github/yinanfang/LikeIt/badges/gpa.svg)](https://codeclimate.com/github/yinanfang/LikeIt)
-[![Test Coverage](https://codeclimate.com/github/yinanfang/LikeIt/badges/coverage.svg)](https://codeclimate.com/github/yinanfang/LikeIt/coverage)<br>
-[![Dependency Status](https://david-dm.org/yinanfang/LikeIt.svg)](https://david-dm.org/yinanfang/LikeIt)
-[![Gitter Join Chat](https://img.shields.io/badge/gitter-join%20chat-1dce73.svg)](https://gitter.im/yinanfang/LikeIt)
+[![Build Status](https://travis-ci.org/yinanfang/LikeIt.png?branch=master)](https://travis-ci.org/yinanfang/LikeIt){:target="_blank"}
+[![Code Climate](https://codeclimate.com/github/yinanfang/LikeIt/badges/gpa.svg)](https://codeclimate.com/github/yinanfang/LikeIt){:target="_blank"}
+[![Test Coverage](https://codeclimate.com/github/yinanfang/LikeIt/badges/coverage.svg)](https://codeclimate.com/github/yinanfang/LikeIt/coverage){:target="_blank"}<br>
+[![Dependency Status](https://david-dm.org/yinanfang/LikeIt.svg)](https://david-dm.org/yinanfang/LikeIt){:target="_blank"}
+[![Gitter Join Chat](https://img.shields.io/badge/gitter-join%20chat-1dce73.svg)](https://gitter.im/yinanfang/LikeIt){:target="_blank"}
 
 
 ## Features
