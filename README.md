@@ -1,6 +1,7 @@
 # LikeIt
 
 [![Build Status](https://travis-ci.org/yinanfang/LikeIt.png?branch=master)](https://travis-ci.org/yinanfang/LikeIt)
+[![Dependency Status](https://david-dm.org/yinanfang/LikeIt.svg)](https://david-dm.org/yinanfang/LikeIt)
 
 ## Features
 
@@ -13,6 +14,13 @@
   - Monitor app status with PM2
   - Logging with winston console logger and file logger (in JSON)
     - Ease for reading on console and extraction on files
+  - Authentication with JWT because
+    - [Cookies are bad for you](http://sitr.us/2011/08/26/cookies-are-bad-for-you.html)
+    - [Difference between JWT and Cookie](https://stormpath.com/blog/where-to-store-your-jwts-cookies-vs-html5-web-storage/)
+
+## Best Practices
+
+  - [Git commit message](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html)
 
 ## Wefaction & Github & Local setup guide. [Reference](https://www.jamestease.co.uk/blether/deploying-express-nodejs-app-to-webfaction-using-git-hooks) (Partially outdated)
 
@@ -60,9 +68,7 @@ Link pm2 to Keymetrics
 
 To-do
 
-Write up shining technologies
-
-relative path problem
+exstract server start delay to config
 
 pm2 start with json add log files for output and errors.
 Add comment to start, stop
@@ -88,6 +94,25 @@ Badge to use
     - https://gitter.im/
   - https://github.com/substack/tape
     - browser: https://ci.testling.com/substack/tape
+  - https://github.com/chaijs/chai
+    - browser: sourcelab
+    - Coverage: overall
+    - license?
+
+winston
+  - connect to loggly
+    - https://www.loggly.com/blog/three-node-js-libraries-which-make-sophisticated-logging-simplers/
+    - https://github.com/winstonjs/winston-loggly
+
+Learn node-inspector
+  - https://github.com/node-inspector/node-inspector
+
+Find useful tools
+  - https://www.airpair.com/node.js/posts/top-10-mistakes-node-developers-make
+    - cover coverage with istanbul: http://ariya.ofilabs.com/2013/10/code-coverage-of-jasmine-tests-using-istanbul-and-karma.html
+    - plato
+      - Add it to gulp: https://github.com/sindresorhus/gulp-plato
+      - Tutorial: http://ariya.ofilabs.com/2013/01/javascript-code-complexity-visualization.html
 
 
 
@@ -111,3 +136,6 @@ Update npm package.json with
 ### Node search path
   - Relative Path Problem: Obtain file from topmost directory with "require.main.require". [Solution and Comparison](https://gist.github.com/branneman/8048520)
   - [How does node search for modules](http://www.bennadel.com/blog/2169-where-does-node-js-and-require-look-for-modules.htm)
+
+### CodeClimate Pull Request Integration
+  - http://docs.codeclimate.com/article/213-github-pull-request-integration

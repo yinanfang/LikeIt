@@ -9,7 +9,7 @@
   "scripts": {
     "test": "node node_modules/argg tests/*.js",
     "cover": "istanbul cover --dir reports/coverage node_modules/argg tests/*.js",
-    "plato": "plato -d reports/plato index.js"
+    "plato": "plato -r -d reports app.js"
   },
   "bugs": {
     "url": "https://github.com/yinanfang/LikeIt/issues"
@@ -47,6 +47,7 @@
     "jasmine-node": "^1.14.5",
     "jshint-stylish": "^2.0.1",
     "karma": "^0.13.9",
+    "karma-coverage": "^0.5.3",
     "karma-jasmine": "^0.3.6",
     "karma-phantomjs-launcher": "^0.2.1",
     "karma-spec-reporter": "0.0.22",
