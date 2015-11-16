@@ -5,7 +5,7 @@
 [![Code Climate](https://codeclimate.com/github/yinanfang/LikeIt/badges/gpa.svg)](https://codeclimate.com/github/yinanfang/LikeIt)
 [![Test Coverage](https://codeclimate.com/github/yinanfang/LikeIt/badges/coverage.svg)](https://codeclimate.com/github/yinanfang/LikeIt/coverage)<br>
 [![Dependency Status](https://david-dm.org/yinanfang/LikeIt.svg)](https://david-dm.org/yinanfang/LikeIt)
-[![Gitter Join Chat](https://img.shields.io/badge/gitter-join%20chat-1dce73.svg)](https://gitter.im/yinanfang/LikeIt)
+[![Join the chat at https://gitter.im/yinanfang/LikeIt](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/yinanfang/LikeIt?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 
 ## Features
