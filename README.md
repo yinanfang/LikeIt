@@ -112,6 +112,16 @@ Badge to use
 Find useful tools
   - https://www.airpair.com/node.js/posts/top-10-mistakes-node-developers-make
 
+How to store JWT token in the browser
+  - https://stormpath.com/blog/where-to-store-your-jwts-cookies-vs-html5-web-storage/
+  - http://security.stackexchange.com/questions/87130/json-web-tokens-how-to-securely-store-the-key
+  - https://stormpath.com/blog/build-secure-user-interfaces-using-jwts/
+  - https://blog.prevoty.com/does-jwt-put-your-web-app-at-risk
+  - http://www.sitepoint.com/php-authorization-jwt-json-web-tokens/
+  - https://github.com/dwyl/learn-json-web-tokens
+  - http://stackoverflow.com/questions/27067251/where-to-store-jwt-in-browser-how-to-protect-against-csrf
+  - https://auth0.com/blog/2014/01/27/ten-things-you-should-know-about-tokens-and-cookies/
+
 
 ## Notes / possible problems
 
