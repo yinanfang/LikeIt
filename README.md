@@ -122,6 +122,15 @@ How to store JWT token in the browser
   - http://stackoverflow.com/questions/27067251/where-to-store-jwt-in-browser-how-to-protect-against-csrf
   - https://auth0.com/blog/2014/01/27/ten-things-you-should-know-about-tokens-and-cookies/
 
+HTTPS server
+  - webfation special: https://community.webfaction.com/questions/4915/https-site
+    - guide: https://docs.webfaction.com/user-guide/websites.html#secure-sites-https
+    - not match problem: https://community.webfaction.com/questions/17306/using-https-and-http-on-a-nodejs-server
+  - node, both http & https: http://stackoverflow.com/questions/11744975/enabling-https-on-express-js
+  - force https
+    - http://stackoverflow.com/questions/7450940/automatic-https-connection-redirect-with-node-js-express
+  － Javascript inline function: http://stackoverflow.com/questions/10238849/how-to-get-a-variable-out-of-an-inline-function
+
 
 ## Notes / possible problems
 

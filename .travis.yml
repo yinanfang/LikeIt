@@ -4,7 +4,7 @@ language: node_js
 node_js:
   - "4.0"
 before_script:
-  - npm install -g bower
+  - npm install -g bower codeclimate-test-reporter
   - bower install
   - npm install --dev
 addons:
