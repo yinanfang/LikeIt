@@ -105,8 +105,8 @@ gulp.task('browser-sync', ['nodemon'], function () {
 // gulp.task('test', ['karmaSingleRun', 'APITestWithJasmine']);
 gulp.task('test', function() {
   runSequence(
-    ['karmaSingleRun'],
-    ['APITestWithJasmine']
+    ['karmaSingleRun', 'APITestWithJasmine'],
+    ['SubmitCoverageReport']
   );
 });
 
@@ -127,6 +127,11 @@ gulp.task('karmaSingleRun', function (done) {
 gulp.task('APITestWithJasmine', shell.task([
   'which jasmine-node',
   'jasmine-node ./test/api',
+]));
+
+// Submit Coverage Report to Code Climate
+gulp.task('SubmitCoverageReport', shell.task([
+  'CODECLIMATE_REPO_TOKEN='+appConfig.CodeClimateRepoToken+' codeclimate-test-reporter < coverage/report-lcov/lcov.info',
 ]));
 
 gulp.task('default', ['clean'], function (cb) {

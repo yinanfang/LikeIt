@@ -10,4 +10,8 @@ before_script:
 script:
   - ./scripts/test
 after_success:
+  - codeclimate-test-reporter < coverage/report-lcov/lcov.info
   - echo 'Travis CI Integration Test Success!'
+addons:
+  code_climate:
+    repo_token: 698fab2a9bc7f2ba22860aebbeeb1263cbb6ef9dbff2b2086a821414baeeba81

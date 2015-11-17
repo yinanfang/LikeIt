@@ -1,10 +1,8 @@
 'use strict';
 
-var isDebug = process.env.IS_DEBUG || true;
-
-module.exports = {
+var appConfig = {
   // Development vs Production
-  isDebug: isDebug,
+  isDebug: process.env.IS_DEBUG || true,
 
   JWTSecret: process.env.JWT_SECRET || '1NZtMZo8Y45RnzJS6CfViEwI1dwpwc',
 
@@ -32,6 +30,12 @@ module.exports = {
   constant: {
     BrowserSyncReloadDelay: 1000,
   },
+
+  CodeClimateRepoToken: '698fab2a9bc7f2ba22860aebbeeb1263cbb6ef9dbff2b2086a821414baeeba81',
+};
+
+module.exports = appConfig;
+
 
 /*
 var currentEnv = process.env.NODE_ENV || 'development';
@@ -137,4 +141,4 @@ NODE_ENV=dev node you_app.js
   //     enabled: false,
   //   },
   // },
-};
+// };
