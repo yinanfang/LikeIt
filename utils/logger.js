@@ -1,6 +1,8 @@
 // Reference: http://tostring.it/2014/06/23/advanced-logging-with-nodejs/
 
+var appConfig = require('../config/config.js');
 var winston = require('winston');
+require('winston-loggly');
 winston.emitErrs = true;
 
 var logger = new winston.Logger({
@@ -19,6 +21,13 @@ var logger = new winston.Logger({
       handleExceptions: true,
       json: false,
       colorize: true,
+    }),
+    new winston.transports.Loggly({
+      level: 'info',
+      inputToken: appConfig.Loggly.token,
+      subdomain: "yinanfang",
+      tags: ["LikeIt"],
+      json:true
     }),
   ],
   exitOnError: false,

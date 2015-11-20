@@ -94,20 +94,11 @@ Badge to use
   - Sauce Labs
     - https://github.com/wycats/handlebars.js/
     - https://github.com/chaijs/chai
-  - Code Climate
-    - https://github.com/sequelize/sequelize
-    - istanbul
-      - can't find repo token
-      - Travis support: http://docs.travis-ci.com/user/code-climate/#JavaScript
-  - Loggly
-    - https://www.loggly.com/blog/three-node-js-libraries-which-make-sophisticated-logging-simplers/
-    - https://github.com/winstonjs/winston-loggly
   - node-inspector
     - https://github.com/node-inspector/node-inspector
   - plato
     - Add it to gulp: https://github.com/sindresorhus/gulp-plato
     - Tutorial: http://ariya.ofilabs.com/2013/01/javascript-code-complexity-visualization.html
-
 
 Find useful tools
   - https://www.airpair.com/node.js/posts/top-10-mistakes-node-developers-make
@@ -121,6 +112,13 @@ How to store JWT token in the browser
   - https://github.com/dwyl/learn-json-web-tokens
   - http://stackoverflow.com/questions/27067251/where-to-store-jwt-in-browser-how-to-protect-against-csrf
   - https://auth0.com/blog/2014/01/27/ten-things-you-should-know-about-tokens-and-cookies/
+Secure & HttpOnly Coockie
+  - http://www.troyhunt.com/2013/03/c-is-for-cookie-h-is-for-hacker.html
+  - https://www.learnallthenodes.com/episodes/35-protecting-against-csrf-attacks-in-node
+
+  - use express-session & csurf for CSRF prevention
+    - http://scottksmith.com/blog/2014/09/04/simple-steps-to-secure-your-express-node-application/
+    - https://www.learnallthenodes.com/episodes/35-protecting-against-csrf-attacks-in-node
 
 HTTPS server
   - webfation special: https://community.webfaction.com/questions/4915/https-site
@@ -130,6 +128,14 @@ HTTPS server
   - force https
     - http://stackoverflow.com/questions/7450940/automatic-https-connection-redirect-with-node-js-express
   － Javascript inline function: http://stackoverflow.com/questions/10238849/how-to-get-a-variable-out-of-an-inline-function
+
+Instagram API
+  - https://lob.com/blog/building-an-instagram-postcard-app-in-express-js/
+  - http://www.9lessons.info/2012/05/login-with-instagram-php.html
+  - https://instagram.com/developer/authentication/
+  - https://github.com/totemstech/instagram-node
+  - https://github.com/jaredhanson/passport-instagram
+
 
 
 ## Notes / possible problems
