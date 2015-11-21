@@ -17,7 +17,6 @@ var shell = require('gulp-shell');
 
 // Clean Output Directory
 gulp.task('clean', function (cb) {
-  console.log('here');
   del([
     'tmp/**',
   ]).then(
@@ -36,10 +35,16 @@ gulp.task('nodemon', function (cb) {
     // nodemon our expressjs server
     script: 'app.js',
 
+    // Environment Variable
+    env: {
+      'NODE_ENV': 'development'
+    },
+
     // watch core server file(s) that require server restart on change
     watch: [
       'api/**/*',
       'app/**/*',
+      'config/**/*',
       'app.js',
     ],
   })
@@ -59,12 +64,11 @@ gulp.task('nodemon', function (cb) {
       // reload connected browsers after a slight delay
       setTimeout(function reload() {
         browserSync.reload({
-          stream: false,   //
+          stream: false,
         });
+        // Run tests
+        gulp.start('test');
       }, BROWSER_SYNC_RELOAD_DELAY);
-
-      // Run tests
-      gulp.start('test');
     });
 });
 
@@ -135,7 +139,6 @@ gulp.task('SubmitCoverageReport', shell.task([
 ]));
 
 gulp.task('default', ['clean'], function (cb) {
-  console.log('before run sequence');
   runSequence(
     ['browser-sync'],
     cb

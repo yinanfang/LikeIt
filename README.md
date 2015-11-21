@@ -89,6 +89,8 @@ Use pmx
 
 Add gulp-eslint
 
+Exact token and credentials in config.js to a env file. Start node with env file. Don't commit env file
+
 Badge to use
 
   - Sauce Labs
@@ -136,7 +138,25 @@ Instagram API
   - https://github.com/totemstech/instagram-node
   - https://github.com/jaredhanson/passport-instagram
 
+Large scale express app folder structure
+  - https://gist.github.com/lancejpollard/1398757
+  - http://stackoverflow.com/questions/5778245/expressjs-how-to-structure-an-application
+  - https://www.terlici.com/2014/08/25/best-practices-express-structure.html
 
+GC api structure
+  - http://www.scriptscoop.net/t/4040f7d2bb7f/node.js-correct-modular-structure-of-nodejs-express-app-for-api.html
+  - http://www.codekitchen.ca/guide-to-structuring-and-building-a-restful-api-using-express-4/
+  - api/v1.0
+    - gc
+    - dbd
+      - db.js
+      - auth.js
+      - list.js
+  - utils
+  - app
+    - index.js
+  - views
+    - html
 
 ## Notes / possible problems
 
@@ -161,3 +181,6 @@ Update npm package.json with
 
 ### CodeClimate Pull Request Integration
   - http://docs.codeclimate.com/article/213-github-pull-request-integration
+
+### jasmine-node simple GET request fails but works on browser
+  - Adjust config.js restart delay
