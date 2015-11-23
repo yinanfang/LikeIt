@@ -8,5 +8,6 @@ fi
 GIT_WORK_TREE=/home/yinanfang/webapps/likeit/app git checkout -f master
 GIT_WORK_TREE=/home/yinanfang/webapps/likeit/app git reset --hard
 
+
 /home/yinanfang/webapps/likeit/bin/stop
 /home/yinanfang/webapps/likeit/bin/start
