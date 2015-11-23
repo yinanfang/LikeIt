@@ -86,6 +86,11 @@ setup express, login.js with jsonwebtoken, simple webpage with handlebar. and da
 Use pmx
   - monitor trafic: https://app.keymetrics.io/#/bucket/5644e8cdc0d152ac7f59a3aa/transactions
   - add custom actions: http://docs.keymetrics.io/docs/pages/custom-actions/
+  - logs for
+    - post-receive
+    - npm install
+    - update server
+    - connect to loggly?
 
 Add gulp-eslint
 
