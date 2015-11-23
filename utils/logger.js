@@ -1,10 +1,12 @@
 // Reference: http://tostring.it/2014/06/23/advanced-logging-with-nodejs/
 
-var appConfig = require('../config/config.js');
+var path = require('path');
 var winston = require('winston');
 require('winston-loggly');
-winston.emitErrs = true;
 
+var appConfig = require('../config/config.js');
+
+winston.emitErrs = true;
 var logger = new winston.Logger({
   transports: [
     new winston.transports.File({
