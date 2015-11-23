@@ -44,6 +44,7 @@ gulp.task('nodemon', function (cb) {
     watch: [
       'api/**/*',
       'app/**/*',
+      'instagram/**/*',
       'config/**/*',
       'app.js',
     ],
@@ -78,7 +79,10 @@ gulp.task('browser-sync', ['nodemon'], function () {
   browserSync.init({
 
     // watch the following files; changes will be injected (css & images) or cause browser to refresh
-    files: ['app/**/*.*'],
+    files: [
+      'public/**/*.*',
+      'views/**/*.*',
+    ],
 
     // informs browser-sync to proxy our expressjs app which would run at the following location
     // The port specified in the app.js

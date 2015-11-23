@@ -158,6 +158,10 @@ GC api structure
   - views
     - html
 
+Express static files
+  - http://expressjs.com/starter/static-files.html
+    - server some static files behind auth?
+
 ## Notes / possible problems
 
 ### node got started in the background and app just keeps running

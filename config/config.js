@@ -20,7 +20,7 @@ var appConfig = {
       webServer: 9876,
     },
     app: {
-      main: 28096,
+      main: process.env.PORT || 28096,
     },
     BrowserSync: {
       browser: 4000,
@@ -28,7 +28,7 @@ var appConfig = {
   },
 
   constant: {
-    BrowserSyncReloadDelay: 1000,
+    BrowserSyncReloadDelay: 2000, // Make it higher when the app grows
   },
 
   CodeClimateRepoToken: '698fab2a9bc7f2ba22860aebbeeb1263cbb6ef9dbff2b2086a821414baeeba81',
@@ -36,6 +36,14 @@ var appConfig = {
   Loggly: {
     token: 'f82a4e7c-c829-43c7-b52d-320de7b84f7e',
   },
+
+  Instagram: {
+    username: 'liketobuyit',
+    password: 'dorafinalproject',
+    redirectURI: 'http://likeit.yinanfang.webfactional.com/handleauth',
+    clientID: '2061f892320f4c188ccbf1c166b47b91',
+    clientSecret: 'b1b59b1daf704d44a188e82225e88bb9'
+  }
 };
 
 module.exports = appConfig;
