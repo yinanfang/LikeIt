@@ -167,6 +167,9 @@ Express static files
   - http://expressjs.com/starter/static-files.html
     - server some static files behind auth?
 
+post-receive problem
+  - Can't do npm install on post-receive?
+
 ## Notes / possible problems
 
 ### node got started in the background and app just keeps running
