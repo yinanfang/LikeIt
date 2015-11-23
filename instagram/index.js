@@ -1,5 +1,6 @@
 var router        = require('express').Router();
 var instagramApi  = require('instagram-node').instagram();
+var request = require('request');
 // var fs            = require('fs');
 var Bluebird      = require('bluebird');
 
@@ -13,6 +14,14 @@ router.get('/', function(req, res, next) {
   if (!req.cookies.instaToken) {
     res.render('login');
   } else{
+    // instagramApi.user_self_liked(function(err, medias, pagination, remaining, limit) {
+    //   logger.info(medias);
+    // });
+    request('https://api.instagram.com/v1/users/self/media/liked?count=999&access_token='+req.cookies.instaToken, function (error, response, body) {
+      if (!error && response.statusCode == 200) {
+        console.log(body) // Show the HTML for the Google homepage.
+      }
+    })
     res.render('home', {layout: 'main'});
   }
 });
@@ -22,7 +31,7 @@ router.get('/authorize-user', function (req, res) {
     client_id: appConfig.Instagram.clientID,
     client_secret: appConfig.Instagram.clientSecret,
   });
-  res.redirect(instagramApi.get_authorization_url(appConfig.Instagram.redirectURI));
+  res.redirect(instagramApi.get_authorization_url(appConfig.Instagram.redirectURI, {scope: ['public_content', 'basic']}));
 });
 
 router.get('/handleauth', function (req, res) {
