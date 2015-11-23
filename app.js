@@ -25,6 +25,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // Cookie-Parser
 app.use(cookieParser());
 // express-handlebars
+app.set('views', path.join(__dirname, 'views'));
 app.engine('.hbs', exphbs({
   defaultLayout: 'main',
   extname: '.hbs',
