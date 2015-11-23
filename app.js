@@ -17,6 +17,11 @@ var env = process.env.NODE_ENV;
 /// Express Middleware                   //
 ///////////////////////////////////////////
 logger.info('configuring express....');
+if (env == 'development') {
+  logger.info('In Development Mode');
+} else {
+  logger.info('In Production Mode');
+}
 
 // Overriding Express logger with Morgan //
 app.use(require('morgan')('combined', { 'stream': logger.stream }));

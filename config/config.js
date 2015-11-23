@@ -1,5 +1,9 @@
 'use strict';
 
+var mainPort = process.env.PORT || 28096;
+var domain = (process.env.NODE_ENV=='development') ? 'localhost:'+mainPort : 'likeit.yinanfang.webfactional.com';
+var protocol = 'http';
+
 var appConfig = {
   // Development vs Production
   isDebug: process.env.IS_DEBUG || true,
@@ -20,7 +24,7 @@ var appConfig = {
       webServer: 9876,
     },
     app: {
-      main: process.env.PORT || 28096,
+      main: mainPort,
     },
     BrowserSync: {
       browser: 4000,
@@ -40,7 +44,7 @@ var appConfig = {
   Instagram: {
     username: 'liketobuyit',
     password: 'dorafinalproject',
-    redirectURI: 'http://likeit.yinanfang.webfactional.com/handleauth',
+    redirectURI: protocol+'://'+domain+'/handleauth',
     clientID: '2061f892320f4c188ccbf1c166b47b91',
     clientSecret: 'b1b59b1daf704d44a188e82225e88bb9'
   }

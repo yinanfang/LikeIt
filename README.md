@@ -148,6 +148,11 @@ Large scale express app folder structure
   - http://stackoverflow.com/questions/5778245/expressjs-how-to-structure-an-application
   - https://www.terlici.com/2014/08/25/best-practices-express-structure.html
 
+winston
+  - no such file error.
+    - doesn't check log but need to create a empty file?
+    - in utils/logger.js check if a empty file exist and create one?
+
 GC api structure
   - http://www.scriptscoop.net/t/4040f7d2bb7f/node.js-correct-modular-structure-of-nodejs-express-app-for-api.html
   - http://www.codekitchen.ca/guide-to-structuring-and-building-a-restful-api-using-express-4/
@@ -169,6 +174,7 @@ Express static files
 
 post-receive problem
   - Can't do npm install on post-receive?
+  - pm2 will be execute from git/LikeIt.git so express's views path will be wrong. How to pretend it's started from likeit/app?
 
 ## Notes / possible problems
 
