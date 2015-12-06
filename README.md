@@ -176,6 +176,14 @@ post-receive problem
   - Can't do npm install on post-receive?
   - pm2 will be execute from git/LikeIt.git so express's views path will be wrong. How to pretend it's started from likeit/app?
 
+display url
+  - make it different for home and login
+
+PhotoSwipe
+  - http://photoswipe.com/documentation/getting-started.html
+  - http://dimsemenov.com/plugins/magnific-popup/
+  - http://getbootstrap.com/examples/jumbotron-narrow/
+
 ## Notes / possible problems
 
 ### node got started in the background and app just keeps running

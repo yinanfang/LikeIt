@@ -12,19 +12,7 @@ Bluebird.promisifyAll(instagramApi);
 
 
 router.get('/', function(req, res, next) {
-  if (!req.cookies.instaToken) {
-    res.render('login');
-  } else{
-    // instagramApi.user_self_liked(function(err, medias, pagination, remaining, limit) {
-    //   logger.info(medias);
-    // });
-    request('https://api.instagram.com/v1/users/self/media/liked?count=999&access_token='+req.cookies.instaToken, function (error, response, body) {
-      if (!error && response.statusCode == 200) {
-        console.log(body) // Show the HTML for the Google homepage.
-      }
-    })
-    res.render('home', {layout: 'main'});
-  }
+  res.render('home');
 });
 
 router.get('/authorize-user', function (req, res) {
@@ -47,36 +35,89 @@ router.get('/handleauth', function (req, res) {
 });
 
 router.get('/logout', function(req, res) {
-    if ( req.cookies.instaToken ) {
-        res.clearCookie('instaToken');
-        res.send(true);
-    }
+  if ( req.cookies.instaToken ) {
+    res.clearCookie('instaToken');
+    res.send(true);
+  }
 });
 
 router.get('/isLogin', function(req, res) {
-    if (!req.cookies.instaToken) {
-        res.send(false);
-    }
-    else {
-        res.send(true);
-    }
+  if (!req.cookies.instaToken) {
+    res.send(false);
+  }
+  else {
+    res.send(true);
+  }
+});
+
+var Sequelize = require('sequelize');
+var DB = appConfig.Database;
+var sequelize = new Sequelize(DB.schema, DB.username, DB.password, {
+  host: DB.host,
+  dialect: 'mysql',
+});
+
+var User = sequelize.define('User', {
+  id: {
+    type: Sequelize.BIGINT(11),
+    primaryKey: true,
+    autoIncrement: true,
+  },
+  username: Sequelize.STRING,
+  profilePicture: Sequelize.STRING,
+  token: Sequelize.STRING,
+}, {
+  timestamps: false,
+  tableName: 'User',
 });
 
 router.get('/selfInfo', function(req, res) {
-    if (!req.cookies.instaToken) {
-        res.send({ret_code: 1});
-    }
-    else {
-        request('https://api.instagram.com/v1/users/self/?access_token='+req.cookies.instaToken,
-        function(error, response, body) {
+  if (!req.cookies.instaToken) {
+    res.send({ret_code: 1});
+  }
+  else {
+    User.findOne({
+      where: {
+        token: req.cookies.instaToken,
+      },
+    }).then(function(user) {
+      if (user) {
+        // console.log(user);
+        var reply = {
+          data: {
+            id: user.id,
+            username: user.username,
+            profile_picture: user.profilePicture,
+          },
+        };
+        console.log(reply);
+        res.send(reply);
+      } else{
+        request('https://api.instagram.com/v1/users/self/?access_token='+req.cookies.instaToken, function(error, response, body) {
+          var info = JSON.parse(body);
+          User.create({
+            username: info.data.username,
+            profilePicture: info.data.profile_picture,
+            token: req.cookies.instaToken,
+          }).then(function(user){
+            var reply = {
+              data: {
+                id: user.id,
+                username: user.username,
+                profile_picture: user.profilePicture,
+              },
+            };
+            console.log(reply);
             if (!error && response.statusCode == 200) {
-                res.send(body);
+              res.send(body);
+            } else {
+              res.send(body);
             }
-            else {
-                res.send(body);
-            }
+          });
         });
-    }
+      }
+    });
+  }
 });
 
 router.get('/photoList', function(req, res) {

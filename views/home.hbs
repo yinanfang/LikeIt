@@ -1,1 +1,279 @@
-<h1>Example App: Home</h1>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+      <title>Like it to buy</title>
+        <!--css of jquery-->
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        <link rel="stylesheet" type="text/css" href="css/indexPageStyle.css">
+        <!--javascript of jquery-->
+        <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <!--javascript by self-->
+        <script type="text/javascript" src="js/js.cookie.js"></script>
+        <!--script type="text/javascript" src="js/config.js"></script-->
+        <script type="text/javascript" src="js/indexPageController.js"></script>
+    <script>
+      // login view
+      var closeLoginPanel = function() {
+      $("#loginView").animate({opacity:"hide"});
+      };
+      var showLoginPanel = function() {
+      $("#loginView").animate({opacity:"show"});
+      };
+
+      // photo view
+      var showPhotoDetailView = function(photoData) {
+          $("#photoDetailView").animate({opacity:"show"});
+      }
+      var closePhotoDetailView = function(photoData) {
+          $("#photoDetailView").animate({opacity:"hide"});
+      }
+
+    $(document).load(function() {
+      $("#loginView").animate({opacity:"hide"});
+      $("#photoDetailView").animate({opacity:"hide"});
+    });
+
+    // onload, call api to get photo list
+    $(document).ready(function() {
+            // get user info callbacks
+            // success
+            var onGetUserInfoSuccess = function(data) {
+            var userName = data['username'];
+            var userIcon = data['profile_picture'];
+            $('#loginLink').html('<img class="userImage" src="' + userIcon + '">');
+            $('#username').text(userName);
+            $('#customerNumber').text(data['id']);
+            $("#btn_login_with_ins").val("Logout");
+
+            $("#txt_username").text(userName);
+            $("#loginPanelUserIcon").html('<img class="loginUserImage" src="' + userIcon + '">');
+            }
+            // failure
+            var onGetUserInfoFailure = function() {
+            $('#loginLink').html('');
+            $('#loginLink').text('Login');
+            $("#btn_login_with_ins").val("Login With Instagram");
+
+            $("#txt_username").text("");
+            $("#loginPanelUserIcon").html('<img class="loginUserImage" src="./images/ins_logo.png">');
+            }
+            // get photo list callback
+            // success
+            var onGetPhotoListSuccess = function(htmlStr) {
+                console.log("get photo list success!");
+                $("#photoList").html(htmlStr);
+            }
+            // failure
+            var onGetPhotoListFailure = function() {
+                console.log("get photo list failed!");
+
+            }
+
+        checkLoginStates(function(result) {
+            if ( result ) {
+                    getUserInfoFromInstagram(onGetUserInfoSuccess, onGetUserInfoFailure);
+                getPhotoListFromInstagram(11874660, onGetPhotoListSuccess, onGetPhotoListFailure);
+            }
+            else {
+                onGetUserInfoFailure();
+            }
+        });
+        });
+
+        // likeBtn handle
+        $(document).on('click', 'input[name="likeBtn"]', function(sender){
+            return;
+            // TODO: delete like/unlike function
+            if ( !isLogin() ) {
+          $("#loginView").animate({opacity:"show"});
+          return;
+            }
+          var likeBtn = $(this);
+        var isLiked = (likeBtn.attr("class") == "btnLikeOn");
+        //console.log(isLiked);
+        // success callback
+        var onSuccess = function(result) {
+          console.log("update like status success! result:" + result);
+          if (result) {
+            likeBtn.attr("class", "btnLikeOn");
+          } else {
+            likeBtn.attr("class", "btnLikeOff");
+          }
+        }
+        // failure callback
+        var onFailure = function() {
+          console.log("update like status failed!")
+        }
+        // call API
+        SetLikePhoto(likeBtn.attr("photoId"), !isLiked, onSuccess, onFailure);
+        });
+
+        // goto instagram page button handle
+        $(document).on('click', 'input[name="gotoInsPageBtn"]', function(sender) {
+            var btn = $(this);
+            var itemUrl = btn.attr("href");
+            window.open(itemUrl, '_blank');
+        });
+
+        // photoBtn handle
+        $(document).on('click', 'img[name="photoBtn"]', function(sender) {
+          var photoBtn = $(this);
+        // success callback
+        var onSuccess = function(result) {
+          //console.log("get photo data success! result:" + result);
+          if (result) {
+                    $("#photoDetailArea").html(result);
+              showPhotoDetailView(result);
+          } else {
+          }
+        }
+        // failure callback
+        var onFailure = function() {
+          console.log("get photo data failed!")
+        }
+        // call API
+        GetPhotoById(photoBtn.attr("photoId"), photoBtn.attr("standardImg"), onSuccess, onFailure);
+        });
+
+        $(document).on('click', 'img[name=itemImage]', function(sender) {
+            var itemImg = $(this);
+            var itemUrl = itemImg.attr("itemUrl");
+            window.open(itemUrl, '_blank');
+            return false;
+        });
+
+        $(document).on('mouseover', 'img[name=itemImage]', function(sender) {
+            var itemImg = $(this);
+            var imgUrl = itemImg.attr("src");
+            var storeUrl = itemImg.attr("itemUrl");
+            var itemName = itemImg.attr("itemName");
+            var itemDescription = itemImg.attr("itemDescription");
+            $("#mainPhoto").attr("src", imgUrl);
+            $("#mainPhoto").attr("itemUrl", storeUrl);
+            $("#itemName").text(itemName);
+            $("#itemDescription").text(itemDescription);
+        })
+
+        $(document).on('click', 'img[id=mainPhoto]', function(sender) {
+            var itemImg = $(this);
+            var imgUrl = itemImg.attr("itemUrl");
+            var win = window.open(imgUrl, '_blank');
+            if(win){
+                //Browser has allowed it to be opened
+                win.focus();
+            }else{
+                //Broswer has blocked it
+                alert('Please allow popups for this site');
+            }
+        })
+
+        $(function() {
+      $("#loginView").animate({opacity:"hide"});
+      $("#photoDetailView").animate({opacity:"hide"});
+
+          // functions
+          // controller events
+          $("#loginLink").click(function(event) {
+            showLoginPanel();
+      });
+      $("#close_login_btn").click(function(event) {
+        closeLoginPanel();
+      });
+      $("#btn_cancel").click(function(event) {
+        closeLoginPanel();
+      });
+
+      $("#close_photo_btn").click(function(event) {
+        closePhotoDetailView();
+      });
+
+      $("#btn_login").click(function(event) {
+        var s_username = $("#txt_username").val();
+        var s_password = $("#txt_password").val();
+        console.log(s_username + "|" + s_password);
+          // success callback
+          var onSuccess = function(result) {
+            console.log("Login success!" + result);
+            closeLoginPanel();
+          }
+          // failure callback
+          var onFailure = function() {
+            console.log("Login failed!")
+          }
+        // call login API here
+        Login(s_username, s_password, onSuccess, onFailure);
+      });
+
+      var logoutCallback = function(logout){
+                if ( logout ) {
+                    console.log("logout!!");
+                    $('#loginLink').text('Login');
+                    $("#btn_login_with_ins").val("Login With Instagram");
+              location.reload();
+                }
+            }
+      $("#btn_login_with_ins").click(function(event) {
+          if ( $(this).val() == "Logout" ) {
+              // logout
+              logoutFromInstagram(logoutCallback);
+                    closeLoginPanel();
+                    $("#btn_login_with_ins").val("Login With Instagram");
+          }
+          else {
+              // login
+              window.location.href = "/authorize-user";
+        }
+      });
+
+      $("#photoDetailView").click(function(event) {
+                var t = jQuery(event.target);
+                var id = t.attr('id');
+          if ( id == $(this).attr('id') ) {
+              closePhotoDetailView();
+          }
+      });
+        });
+    </script>
+    </head>
+    <body>
+      <div id="headerView">
+        <div id="headerTitle">Like it to buy</div>
+        <div id="username"></div>
+      <a href="#" id="loginLink"></a>
+      <!--img src="#" id="loginUserIcon"/-->
+      </div>
+      <div id="mainView">
+          <div id="photoList">
+          </div>
+          <div class="pageFooter">
+              made by Dora.Yuan<br/>
+              2015
+          </div>
+      </div>
+      <div id="loginView">
+        <div id="loginPanel">
+          <input type="button" id="close_login_btn" value="×"/>
+          <!--
+          <span>Username : <input type="text" id="txt_username"/></span>
+          <span>Password : <input type="text" id="txt_password"/></span>
+          <input type="button" id="btn_login" value="Login" />
+          <input type="button" id="btn_cancel" value="Cancel" />
+          -->
+          <div id="loginPanelUserIcon"></div>
+          <div id="txt_username"></div>
+          <div id="textCustomerNumber">Royal customer No. <span id="customerNumber"></span></div>
+          <input type="button" id="btn_login_with_ins" value="Login With Instagram">
+        </div>
+      </div>
+      <div id="photoDetailView">
+        <div id="photoPanel">
+            <div id="photoDetailArea"></div>
+          <!--input type="button" id="close_photo_btn" value="×"/-->
+            <!--input type="button" id="next_item_btn" value="NEXT>"/>
+            <input type="button" id="prev_item_btn" value="<PREV"/-->
+        </div>
+      </div>
+    </body>
+<html>

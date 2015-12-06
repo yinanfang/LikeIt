@@ -10,6 +10,14 @@ var appConfig = {
 
   JWTSecret: process.env.JWT_SECRET || '1NZtMZo8Y45RnzJS6CfViEwI1dwpwc',
 
+  Database: {
+    host: 'web404.webfaction.com',
+    port: 3306,
+    schema: 'likeit',
+    username: 'likeit',
+    password: '123456',
+  },
+
   path: {
     app: '/',
     api: 'api/**/*.js',
@@ -43,7 +51,7 @@ var appConfig = {
 
   Instagram: {
     username: 'liketobuyit',
-    password: 'dorafinalproject',
+    password: 'finalsucks',
     redirectURI: protocol+'://'+domain+'/handleauth',
     clientID: '2061f892320f4c188ccbf1c166b47b91',
     clientSecret: 'b1b59b1daf704d44a188e82225e88bb9'
