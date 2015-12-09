@@ -17,6 +17,7 @@ LikeIt gives user easy access to purchase items appear in the photos under our a
     - Template engine with Handlebars.js
     - ORM Library with Sequalize
     - RESTful server-side API with express router
+    - Instagram API for authentication, media, likes, etc.
   - Build System
     - gulp with auto-watch and auto-restart function for dev
   - Test
